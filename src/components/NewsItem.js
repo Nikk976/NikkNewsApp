@@ -6,10 +6,12 @@ export default class NewsItem extends Component {
     return (
       <div>
         <div className="card">
-          <span style={{zIndex:'1', left:'84%!important'}} class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          <div style={{display:'flex', justifyContent:'flex-end', position:'absolute', right:'0'}}>
+          <span  className="badge rounded-pill bg-danger">
            {source}
-            <span class="visually-hidden">unread messages</span>
+            <span className="visually-hidden">unread messages</span>
           </span>
+          </div>
           <img
             src={
               !imageUrl
@@ -21,8 +23,8 @@ export default class NewsItem extends Component {
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{discription}</p>
-            <p class="card-text">
-              <small class="text-body-secondary">
+            <p className="card-text">
+              <small className="text-danger">
                 By {!author ? "Unknown" : author} on{" "}
                 {new Date(date).toGMTString()}
               </small>
